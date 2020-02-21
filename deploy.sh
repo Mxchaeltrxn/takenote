@@ -8,6 +8,11 @@ IMAGE="taniarascia/takenote"
 
 # Git version with git hash and tags (if they exist) to be used as Docker tag
 GIT_VERSION=$(git describe --always --abbrev --tags --long)
+WEBPACK_CLIENT_ID="a6f0527550d66198cedf"
+
+echo "Setting client ID for Webpack"
+
+echo "CLIENT_ID=${WEBPACK_CLIENT_ID}" > .env
 
 # Build and tag new Docker image and push up to Docker Hub
 echo "Building and tagging new Docker image: ${IMAGE}:${GIT_VERSION}"
